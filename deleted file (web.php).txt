@@ -1,0 +1,25 @@
+
+Route::get('/', function () {
+   $user = ['nama' => 'Fariz', 'role' => 'admin'];
+    return view('pages.home', $user);
+});
+
+Route::redirect('/home', '/');
+
+Route::get('/about', function(){
+    $user = ['nama' => 'Asep', 'role' => 'admin'];
+    return view('pages.about', $user);
+});
+
+Route::get('/contact', function(){
+    $data = [
+        "person" => ["Rizky", "Firdaus", "Gavin", "Dzaky", "Iqbal"]
+    ];
+    return view('pages.contact', $data);
+});
+ @for($i = 1; $i <= 10; $i++) Nomor{{ $i }}<br>
+        @endfor
+        <br>
+        @foreach($data as $person)
+        Kontak : {{ $loop->iteration }} : {{ $person->namalengkap }}<br>
+        @endforeach

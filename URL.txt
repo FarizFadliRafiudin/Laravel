@@ -1,0 +1,51 @@
+// URL ABOUT
+Route::get('/about', function () {
+    return 'ini halaman about';
+});
+
+// // URL CONTACT
+// Route::get('/contact', function () {
+//     return view('contact');
+// });
+// Versi Pendek URL Contact
+Route::view('/profile', 'profile', ['name' => 'Fariz']); 
+
+// Versi array dalam bentuk banyak 
+$profile = [
+ 'name' =>'Fariz Fadli',
+ 'phone' => '+62 831-4835-7682', 
+ 'position' => 'Student',
+ 'born' => '22 june 2005',
+ 'jk' => 'Laki-Laki',
+ 'School' => 'SMKN 1 SUBANG'
+];
+Route::view('/profile', 'profile', $profile);
+
+// Versi mengambil Data dari URL
+// Ex. localhost:8000/berita/kasus-penculikan-remaja
+Route::get('/berita/{id}', function ($id) {
+    return 'Berita ID :' . $id;
+});
+
+Route::get('/berita/{id}/komentar/{komentar}', function ($id, $komentar) {
+    return 'Berita ID :' . $id. '<br> Komentar Berita :' .$komentar ;
+});
+
+// Halaman Administrator
+Route::prefix('SMKN 1 SUBANG')->group(function (){
+    Route::get('/sejarah', function (){
+        return 'ini sejarah';
+    });
+
+    Route::get('/visi-misi', function (){
+        return 'ini visi misi';
+    });
+
+    Route::get('/jurusan', function (){
+        return 'ini jurusan';
+    });
+
+    Route::get('/prestasi', function (){
+        return 'ini prestasi';
+    });
+});

@@ -1,0 +1,409 @@
+Microsoft Windows [Version 10.0.19044.2130]
+(c) Microsoft Corporation. All rights reserved.
+
+C:\Users\Novan Nurseha>cd..
+
+C:\Users>cd..
+
+C:\>cd belajarlaravel/kwu-app
+
+C:\belajarlaravel\kwu-app>php artisan make:migration create_class_table
+
+   INFO  Created migration [2022_11_17_063612_create_class_table].
+
+^C
+C:\belajarlaravel\kwu-app>php artisan migrate
+
+   WARN  The database 'laravel' does not exist on the 'mysql' connection.
+
+  Would you like to create it? (yes/no) [no]
+❯ yes
+
+   INFO  Preparing database.
+
+  Creating migration table .............................................................................. 1,013ms DONE
+
+   INFO  Running migrations.
+
+  2014_10_12_000000_create_users_table .................................................................. 1,427ms DONE
+  2014_10_12_100000_create_password_resets_table .......................................................... 663ms DONE
+  2019_08_19_000000_create_failed_jobs_table .............................................................. 702ms DONE
+  2019_12_14_000001_create_personal_access_tokens_table ................................................... 724ms DONE
+  2022_11_17_063120_create_class_table .................................................................... 282ms DONE
+  2022_11_17_063612_create_class_table ..................................................................... 18ms FAIL
+
+   Illuminate\Database\QueryException
+
+  SQLSTATE[42S01]: Base table or view already exists: 1050 Table 'class' already exists (SQL: create table `class` (`id` bigint unsigned not null auto_increment primary key, `created_at` timestamp null, `updated_at` timestamp null) default character set utf8mb4 collate 'utf8mb4_unicode_ci')
+
+  at C:\belajarlaravel\kwu-app\vendor\laravel\framework\src\Illuminate\Database\Connection.php:760
+    756▕         // If an exception occurs when attempting to run a query, we'll format the error
+    757▕         // message to include the bindings with SQL, which will make this exception a
+    758▕         // lot more helpful to the developer instead of just the database's errors.
+    759▕         catch (Exception $e) {
+  ➜ 760▕             throw new QueryException(
+    761▕                 $query, $this->prepareBindings($bindings), $e
+    762▕             );
+    763▕         }
+    764▕     }
+
+  1   C:\belajarlaravel\kwu-app\vendor\laravel\framework\src\Illuminate\Database\Connection.php:545
+      PDOException::("SQLSTATE[42S01]: Base table or view already exists: 1050 Table 'class' already exists")
+
+  2   C:\belajarlaravel\kwu-app\vendor\laravel\framework\src\Illuminate\Database\Connection.php:545
+      PDOStatement::execute()
+
+C:\belajarlaravel\kwu-app>php artisan make:seeder StudentsSeeder
+
+   INFO  Seeder [C:\belajarlaravel\kwu-app\database/seeders/StudentsSeeder.php] created successfully.
+
+
+C:\belajarlaravel\kwu-app>php artisan make:migration create_student_table
+
+   INFO  Created migration [2022_11_17_064827_create_student_table].
+
+^C
+C:\belajarlaravel\kwu-app>php artisan migrate
+
+   INFO  Running migrations.
+
+  2022_11_17_063612_create_class_table ..................................................................... 16ms FAIL
+
+   Illuminate\Database\QueryException
+
+  SQLSTATE[42S01]: Base table or view already exists: 1050 Table 'class' already exists (SQL: create table `class` (`id` bigint unsigned not null auto_increment primary key, `created_at` timestamp null, `updated_at` timestamp null) default character set utf8mb4 collate 'utf8mb4_unicode_ci')
+
+  at C:\belajarlaravel\kwu-app\vendor\laravel\framework\src\Illuminate\Database\Connection.php:760
+    756▕         // If an exception occurs when attempting to run a query, we'll format the error
+    757▕         // message to include the bindings with SQL, which will make this exception a
+    758▕         // lot more helpful to the developer instead of just the database's errors.
+    759▕         catch (Exception $e) {
+  ➜ 760▕             throw new QueryException(
+    761▕                 $query, $this->prepareBindings($bindings), $e
+    762▕             );
+    763▕         }
+    764▕     }
+
+  1   C:\belajarlaravel\kwu-app\vendor\laravel\framework\src\Illuminate\Database\Connection.php:545
+      PDOException::("SQLSTATE[42S01]: Base table or view already exists: 1050 Table 'class' already exists")
+
+  2   C:\belajarlaravel\kwu-app\vendor\laravel\framework\src\Illuminate\Database\Connection.php:545
+      PDOStatement::execute()
+
+C:\belajarlaravel\kwu-app>php artisan migrate:refresh
+
+   INFO  Rolling back migrations.
+
+  2022_11_17_063120_create_class_table .................................................................... 465ms DONE
+  2019_12_14_000001_create_personal_access_tokens_table ................................................... 265ms DONE
+  2019_08_19_000000_create_failed_jobs_table .............................................................. 560ms DONE
+  2014_10_12_100000_create_password_resets_table .......................................................... 193ms DONE
+  2014_10_12_000000_create_users_table .................................................................... 221ms DONE
+
+   INFO  Running migrations.
+
+  2014_10_12_000000_create_users_table .................................................................... 520ms DONE
+  2014_10_12_100000_create_password_resets_table .......................................................... 545ms DONE
+  2019_08_19_000000_create_failed_jobs_table .............................................................. 483ms DONE
+  2019_12_14_000001_create_personal_access_tokens_table ................................................. 1,268ms DONE
+  2022_11_17_063120_create_class_table .................................................................... 254ms DONE
+  2022_11_17_063612_create_class_table ...................................................................... 4ms FAIL
+
+   Illuminate\Database\QueryException
+
+  SQLSTATE[42S01]: Base table or view already exists: 1050 Table 'class' already exists (SQL: create table `class` (`id` bigint unsigned not null auto_increment primary key, `created_at` timestamp null, `updated_at` timestamp null) default character set utf8mb4 collate 'utf8mb4_unicode_ci')
+
+  at C:\belajarlaravel\kwu-app\vendor\laravel\framework\src\Illuminate\Database\Connection.php:760
+    756▕         // If an exception occurs when attempting to run a query, we'll format the error
+    757▕         // message to include the bindings with SQL, which will make this exception a
+    758▕         // lot more helpful to the developer instead of just the database's errors.
+    759▕         catch (Exception $e) {
+  ➜ 760▕             throw new QueryException(
+    761▕                 $query, $this->prepareBindings($bindings), $e
+    762▕             );
+    763▕         }
+    764▕     }
+
+  1   C:\belajarlaravel\kwu-app\vendor\laravel\framework\src\Illuminate\Database\Connection.php:545
+      PDOException::("SQLSTATE[42S01]: Base table or view already exists: 1050 Table 'class' already exists")
+
+  2   C:\belajarlaravel\kwu-app\vendor\laravel\framework\src\Illuminate\Database\Connection.php:545
+      PDOStatement::execute()
+
+C:\belajarlaravel\kwu-app>php artisan db:seed --class=StudentsSeeder
+
+   INFO  Seeding database.
+
+
+   Illuminate\Database\QueryException
+
+  SQLSTATE[42S02]: Base table or view not found: 1146 Table 'laravel.students' doesn't exist (SQL: insert into `students` (`namalengkap`, `nis`, `jk`, `created_at`) values (David Lutfi, 122220010, L, 2022-11-17 06:51:54))
+
+  at C:\belajarlaravel\kwu-app\vendor\laravel\framework\src\Illuminate\Database\Connection.php:760
+    756▕         // If an exception occurs when attempting to run a query, we'll format the error
+    757▕         // message to include the bindings with SQL, which will make this exception a
+    758▕         // lot more helpful to the developer instead of just the database's errors.
+    759▕         catch (Exception $e) {
+  ➜ 760▕             throw new QueryException(
+    761▕                 $query, $this->prepareBindings($bindings), $e
+    762▕             );
+    763▕         }
+    764▕     }
+
+  i   A table was not found: You might have forgotten to run your database migrations.
+      https://laravel.com/docs/master/migrations#running-migrations
+
+  1   C:\belajarlaravel\kwu-app\vendor\laravel\framework\src\Illuminate\Database\Connection.php:539
+      PDOException::("SQLSTATE[42S02]: Base table or view not found: 1146 Table 'laravel.students' doesn't exist")
+
+  2   C:\belajarlaravel\kwu-app\vendor\laravel\framework\src\Illuminate\Database\Connection.php:539
+      PDO::prepare("insert into `students` (`namalengkap`, `nis`, `jk`, `created_at`) values (?, ?, ?, ?)")
+
+C:\belajarlaravel\kwu-app>php artisan make:migration create_student_table
+
+   INFO  Created migration [2022_11_17_065216_create_student_table].
+
+^C
+C:\belajarlaravel\kwu-app>php artisan migrate:refresh
+
+   INFO  Rolling back migrations.
+
+  2022_11_17_063120_create_class_table .................................................................... 250ms DONE
+  2019_12_14_000001_create_personal_access_tokens_table ................................................... 201ms DONE
+  2019_08_19_000000_create_failed_jobs_table .............................................................. 278ms DONE
+  2014_10_12_100000_create_password_resets_table .......................................................... 216ms DONE
+  2014_10_12_000000_create_users_table .................................................................... 447ms DONE
+
+   INFO  Running migrations.
+
+  2014_10_12_000000_create_users_table .................................................................... 530ms DONE
+  2014_10_12_100000_create_password_resets_table .......................................................... 519ms DONE
+  2019_08_19_000000_create_failed_jobs_table .............................................................. 718ms DONE
+  2019_12_14_000001_create_personal_access_tokens_table ................................................. 1,451ms DONE
+  2022_11_17_063120_create_class_table .................................................................... 416ms DONE
+  2022_11_17_063612_create_class_table ..................................................................... 18ms FAIL
+
+   Illuminate\Database\QueryException
+
+  SQLSTATE[42S01]: Base table or view already exists: 1050 Table 'class' already exists (SQL: create table `class` (`id` bigint unsigned not null auto_increment primary key, `created_at` timestamp null, `updated_at` timestamp null) default character set utf8mb4 collate 'utf8mb4_unicode_ci')
+
+  at C:\belajarlaravel\kwu-app\vendor\laravel\framework\src\Illuminate\Database\Connection.php:760
+    756▕         // If an exception occurs when attempting to run a query, we'll format the error
+    757▕         // message to include the bindings with SQL, which will make this exception a
+    758▕         // lot more helpful to the developer instead of just the database's errors.
+    759▕         catch (Exception $e) {
+  ➜ 760▕             throw new QueryException(
+    761▕                 $query, $this->prepareBindings($bindings), $e
+    762▕             );
+    763▕         }
+    764▕     }
+
+  1   C:\belajarlaravel\kwu-app\vendor\laravel\framework\src\Illuminate\Database\Connection.php:545
+      PDOException::("SQLSTATE[42S01]: Base table or view already exists: 1050 Table 'class' already exists")
+
+  2   C:\belajarlaravel\kwu-app\vendor\laravel\framework\src\Illuminate\Database\Connection.php:545
+      PDOStatement::execute()
+
+C:\belajarlaravel\kwu-app>php artisan db:seed --class=StudentsSeeder
+
+   INFO  Seeding database.
+
+
+   Illuminate\Database\QueryException
+
+  SQLSTATE[42S02]: Base table or view not found: 1146 Table 'laravel.students' doesn't exist (SQL: insert into `students` (`namalengkap`, `nis`, `jk`, `created_at`) values (David Lutfi, 122220010, L, 2022-11-17 07:00:30))
+
+  at C:\belajarlaravel\kwu-app\vendor\laravel\framework\src\Illuminate\Database\Connection.php:760
+    756▕         // If an exception occurs when attempting to run a query, we'll format the error
+    757▕         // message to include the bindings with SQL, which will make this exception a
+    758▕         // lot more helpful to the developer instead of just the database's errors.
+    759▕         catch (Exception $e) {
+  ➜ 760▕             throw new QueryException(
+    761▕                 $query, $this->prepareBindings($bindings), $e
+    762▕             );
+    763▕         }
+    764▕     }
+
+  i   A table was not found: You might have forgotten to run your database migrations.
+      https://laravel.com/docs/master/migrations#running-migrations
+
+  1   C:\belajarlaravel\kwu-app\vendor\laravel\framework\src\Illuminate\Database\Connection.php:539
+      PDOException::("SQLSTATE[42S02]: Base table or view not found: 1146 Table 'laravel.students' doesn't exist")
+
+  2   C:\belajarlaravel\kwu-app\vendor\laravel\framework\src\Illuminate\Database\Connection.php:539
+      PDO::prepare("insert into `students` (`namalengkap`, `nis`, `jk`, `created_at`) values (?, ?, ?, ?)")
+
+C:\belajarlaravel\kwu-app>php artisan migrate:refresh
+
+   INFO  Rolling back migrations.
+
+  2022_11_17_063120_create_class_table ........................................................... Migration not found
+  2019_12_14_000001_create_personal_access_tokens_table ................................................... 430ms DONE
+  2019_08_19_000000_create_failed_jobs_table .............................................................. 211ms DONE
+  2014_10_12_100000_create_password_resets_table .......................................................... 386ms DONE
+  2014_10_12_000000_create_users_table .................................................................... 248ms DONE
+
+   INFO  Running migrations.
+
+  2014_10_12_000000_create_users_table .................................................................. 1,575ms DONE
+  2014_10_12_100000_create_password_resets_table ........................................................ 1,109ms DONE
+  2019_08_19_000000_create_failed_jobs_table .............................................................. 545ms DONE
+  2019_12_14_000001_create_personal_access_tokens_table ................................................... 915ms DONE
+  2022_11_15_034246_create_class_table ...................................................................... 3ms FAIL
+
+   Illuminate\Database\QueryException
+
+  SQLSTATE[42S01]: Base table or view already exists: 1050 Table 'class' already exists (SQL: create table `class` (`id` bigint unsigned not null auto_increment primary key, `namakelas` varchar(10) not null, `namajurusan` varchar(50) not null, `created_at` timestamp null, `updated_at` timestamp null) default character set utf8mb4 collate 'utf8mb4_unicode_ci')
+
+  at C:\belajarlaravel\kwu-app\vendor\laravel\framework\src\Illuminate\Database\Connection.php:760
+    756▕         // If an exception occurs when attempting to run a query, we'll format the error
+    757▕         // message to include the bindings with SQL, which will make this exception a
+    758▕         // lot more helpful to the developer instead of just the database's errors.
+    759▕         catch (Exception $e) {
+  ➜ 760▕             throw new QueryException(
+    761▕                 $query, $this->prepareBindings($bindings), $e
+    762▕             );
+    763▕         }
+    764▕     }
+
+  1   C:\belajarlaravel\kwu-app\vendor\laravel\framework\src\Illuminate\Database\Connection.php:545
+      PDOException::("SQLSTATE[42S01]: Base table or view already exists: 1050 Table 'class' already exists")
+
+  2   C:\belajarlaravel\kwu-app\vendor\laravel\framework\src\Illuminate\Database\Connection.php:545
+      PDOStatement::execute()
+
+C:\belajarlaravel\kwu-app>php artisan migrate:refresh
+
+   WARN  Migration table not found.
+
+   INFO  Preparing database.
+
+  Creating migration table ................................................................................ 409ms DONE
+
+   INFO  Running migrations.
+
+  2014_10_12_000000_create_users_table .................................................................... 590ms DONE
+  2014_10_12_100000_create_password_resets_table ........................................................ 1,193ms DONE
+  2019_08_19_000000_create_failed_jobs_table .............................................................. 769ms DONE
+  2019_12_14_000001_create_personal_access_tokens_table ................................................. 1,118ms DONE
+  2022_11_15_034246_create_class_table .................................................................... 280ms DONE
+  2022_11_17_064924_create_students_table ................................................................. 862ms DONE
+
+
+C:\belajarlaravel\kwu-app>php artisan make:seeder StudentsSeeder
+
+   ERROR  Seeder already exists.
+
+
+C:\belajarlaravel\kwu-app>php artisan db:seed --class=StudentsSeeder
+
+   INFO  Seeding database.
+
+
+C:\belajarlaravel\kwu-app>php artisan migrate:fresh --seed --seeder=StudentsSeeder
+
+  Dropping all tables ................................................................................... 2,373ms DONE
+
+   INFO  Preparing database.
+
+  Creating migration table ................................................................................ 351ms DONE
+
+   INFO  Running migrations.
+
+  2014_10_12_000000_create_users_table .................................................................... 684ms DONE
+  2014_10_12_100000_create_password_resets_table .......................................................... 885ms DONE
+  2019_08_19_000000_create_failed_jobs_table ............................................................ 1,242ms DONE
+  2019_12_14_000001_create_personal_access_tokens_table ................................................. 1,238ms DONE
+  2022_11_15_034246_create_class_table .................................................................... 315ms DONE
+  2022_11_17_064924_create_students_table ................................................................. 885ms DONE
+
+   INFO  Seeding database.
+
+
+C:\belajarlaravel\kwu-app>php artisan make:seeder ClassD
+
+   INFO  Seeder [C:\belajarlaravel\kwu-app\database/seeders/ClassD.php] created successfully.
+
+
+C:\belajarlaravel\kwu-app>php artisan db:seed --class=ClassD
+
+   INFO  Seeding database.
+
+
+C:\belajarlaravel\kwu-app>php artisan make:controller HomeC
+
+   INFO  Controller [C:\belajarlaravel\kwu-app\app/Http/Controllers/HomeC.php] created successfully.
+
+
+C:\belajarlaravel\kwu-app>git status
+On branch main
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   routes/web.php
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        app/Http/Controllers/HomeC.php
+        database/migrations/2022_11_15_034246_create_class_table.php
+        database/migrations/2022_11_17_064924_create_students_table.php
+        database/seeders/ClassD.php
+        database/seeders/StudentsSeeder.php
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+C:\belajarlaravel\kwu-app>git add .
+warning: LF will be replaced by CRLF in routes/web.php.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in app/Http/Controllers/HomeC.php.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in database/migrations/2022_11_15_034246_create_class_table.php.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in database/migrations/2022_11_17_064924_create_students_table.php.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in database/seeders/ClassD.php.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in database/seeders/StudentsSeeder.php.
+The file will have its original line endings in your working directory
+
+C:\belajarlaravel\kwu-app>git status
+On branch main
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   app/Http/Controllers/HomeC.php
+        new file:   database/migrations/2022_11_15_034246_create_class_table.php
+        new file:   database/migrations/2022_11_17_064924_create_students_table.php
+        new file:   database/seeders/ClassD.php
+        new file:   database/seeders/StudentsSeeder.php
+        modified:   routes/web.php
+
+
+C:\belajarlaravel\kwu-app>git commit -m "belajar laravel seed & controller"
+[main b3988a2] belajar laravel seed & controller
+ 6 files changed, 174 insertions(+), 11 deletions(-)
+ create mode 100644 app/Http/Controllers/HomeC.php
+ create mode 100644 database/migrations/2022_11_15_034246_create_class_table.php
+ create mode 100644 database/migrations/2022_11_17_064924_create_students_table.php
+ create mode 100644 database/seeders/ClassD.php
+ create mode 100644 database/seeders/StudentsSeeder.php
+
+C:\belajarlaravel\kwu-app>git log
+commit b3988a20447855d99a3d221104ca90b0394664a0 (HEAD -> main)
+Author: = <=>
+Date:   Thu Nov 17 15:05:24 2022 +0700
+
+    belajar laravel seed & controller
+
+commit 09d9af7a2812f45b8e8d508df4e4cda94aabdad7
+Author: = <=>
+Date:   Thu Nov 10 14:49:57 2022 +0700
+
+    Belajar laravel if for
+
+commit a5440422217ff79912262f29b5c91a80699e0d48
+Author: = <=>
+Date:   Wed Nov 9 19:20:35 2022 +0700
+
+    first commit
+
+C:\belajarlaravel\kwu-app>

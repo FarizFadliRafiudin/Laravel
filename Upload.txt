@@ -1,0 +1,72 @@
+Microsoft Windows [Version 10.0.19044.2130]
+(c) Microsoft Corporation. All rights reserved.
+
+C:\Users\Novan Nurseha>cd..
+
+C:\Users>cd..
+
+C:\>cd belajarlaravel/kwu-app
+
+C:\belajarlaravel\kwu-app>git config --global user.name = "Fariz Fadli Rafiudin"
+
+C:\belajarlaravel\kwu-app>git config --global user.email = "farizfadlirafi@gmail.com"
+
+C:\belajarlaravel\kwu-app>git init
+Reinitialized existing Git repository in C:/belajarlaravel/kwu-app/.git/
+
+C:\belajarlaravel\kwu-app>git status
+On branch main
+Changes not staged for commit:
+  (use "git add/rm <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        deleted:    resources/views/profile.blade.php
+        modified:   routes/web.php
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        resources/views/layout.blade.php
+        resources/views/pages/
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+C:\belajarlaravel\kwu-app>git add .
+warning: LF will be replaced by CRLF in routes/web.php.
+The file will have its original line endings in your working directory
+
+C:\belajarlaravel\kwu-app>git status
+On branch main
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   resources/views/layout.blade.php
+        new file:   resources/views/pages/about.blade.php
+        new file:   resources/views/pages/contact.blade.php
+        new file:   resources/views/pages/home.blade.php
+        deleted:    resources/views/profile.blade.php
+        modified:   routes/web.php
+
+
+C:\belajarlaravel\kwu-app>git commit -m "Belajar laravel if for"
+[main 09d9af7] Belajar laravel if for
+ 6 files changed, 90 insertions(+), 91 deletions(-)
+ create mode 100644 resources/views/layout.blade.php
+ create mode 100644 resources/views/pages/about.blade.php
+ create mode 100644 resources/views/pages/contact.blade.php
+ create mode 100644 resources/views/pages/home.blade.php
+ delete mode 100644 resources/views/profile.blade.php
+ rewrite routes/web.php (72%)
+
+C:\belajarlaravel\kwu-app>
+C:\belajarlaravel\kwu-app>git log
+commit 09d9af7a2812f45b8e8d508df4e4cda94aabdad7 (HEAD -> main)
+Author: = <=>
+Date:   Thu Nov 10 14:49:57 2022 +0700
+
+    Belajar laravel if for
+
+commit a5440422217ff79912262f29b5c91a80699e0d48
+Author: = <=>
+Date:   Wed Nov 9 19:20:35 2022 +0700
+
+    first commit
+
+C:\belajarlaravel\kwu-app>
